@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PlaceBombFaster
 {
-    public class Core
+    public class Core:IDisposable
     {
         private Core _core;
         public Core core
@@ -15,7 +15,14 @@ namespace PlaceBombFaster
                 if (_core == null) _core = new Core();
                 return _core;
             }
-            set;
+            set
+            {
+                if (value == null)
+                {
+                    _core.Dispose();
+                }
+               _core = value;
+            }
         }
 
 
@@ -23,5 +30,12 @@ namespace PlaceBombFaster
         {
 
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+
+
