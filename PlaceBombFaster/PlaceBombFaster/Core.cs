@@ -7,29 +7,17 @@ namespace PlaceBombFaster
 {
     public class Core:IDisposable
     {
-        private Core _core;
-        public Core core
-        {
-            get
-            {
-                if (_core == null) _core = new Core();
-                return _core;
-            }
-            set
-            {
-                if (value == null)
-                {
-                    _core.Dispose();
-                }
-               _core = value;
-            }
-        }
 
+        public List<GameObject> GameObjectsList { get; private set; }
 
-        Core()
+        //public  MyProperty { get; set; }
+
+        public Core()
         {
 
         }
+
+
 
         public void Dispose()
         {
