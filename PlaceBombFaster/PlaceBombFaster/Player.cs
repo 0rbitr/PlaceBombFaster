@@ -13,6 +13,5 @@ namespace PlaceBombFaster
         public string Name { get;  set; }
         public Color PlayerColor { get; set; }
 
-
     }
 }
