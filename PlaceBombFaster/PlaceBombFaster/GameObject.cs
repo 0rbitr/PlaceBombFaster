@@ -8,5 +8,7 @@ namespace PlaceBombFaster
     public abstract class GameObject
     {
         public static Core GameCore;
+
+
     }
 }

@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace PlaceBombFaster
 {
-    [Serializable]
+    
     interface IControlable
     {
         public Key GoUp { get; protected set; }

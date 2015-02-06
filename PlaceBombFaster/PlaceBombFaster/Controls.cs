@@ -42,17 +42,19 @@ namespace PlaceBombFaster
             ControlableUnit = unit;
             foreach (var item in ControlableUnit.GetType().GetProperties())
             {
-                GetActionByKey.Add((Key)item.GetValue(ControlableUnit,null), (Action)Delegate.CreateDelegate(
+                AddActionOnKey((Key)item.GetValue(ControlableUnit,null), item.Name, 
+                    (Action)Delegate.CreateDelegate(
                     typeof(Action),
                     ControlableUnit,
                     ControlableUnit.GetType().GetMethod(item.Name))
                    );
-                GetActionByDescription.Add(item.Name, (Action)Delegate.CreateDelegate(
-                    typeof(Action),
-                    ControlableUnit,
-                    ControlableUnit.GetType().GetMethod(item.Name))
-                    );
             }
+        }
+
+        public void AddActionOnKey(Key key, string descrption, Action action)
+        {
+            GetActionByKey.Add(key, action);
+            GetActionByDescription.Add(descrption, action);
         }
     }
 }

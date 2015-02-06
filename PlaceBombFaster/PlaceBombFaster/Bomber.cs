@@ -4,15 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Windows.Media;
 using System.Windows.Input;
+using System.Runtime.Serialization;
 
 namespace PlaceBombFaster
 {
-    public class Bomber:GameObject,IUpdatable,IDrawable, IControlable
+    [Serializable]
+    public class Bomber : GamePhysicalObject, IUpdatable, IDrawable, IControlable
     {
-        private DrawingImage CurrentTexture;
+        
         public static List<DrawingImage> AnimationTexture;
- 
 
+        Controls controls;
+
+        public Bomber()
+        {
+            controls = new Controls(this);
+        }
 
         public void Update(TimeSpan timeSpan)
         {
@@ -133,5 +140,7 @@ namespace PlaceBombFaster
             throw new NotImplementedException();
         } 
         #endregion
+
+       
     }
 }
