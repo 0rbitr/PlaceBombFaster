@@ -6,20 +6,37 @@ using System.Windows.Input;
 
 namespace PlaceBombFaster
 {
-    public class Control
+    public class Controls
     {
 
-        public Key Controlkey { get; set; }
+        //public Key GoUp { get; set; }
+        //public Key GoDown { get; set; }
+        //public Key GoLeft { get; set; }
+        //public Key GoRight { get; set; }
+        //public Key SpecialKey1 { get; set; }
+        //public Key SpecialKey2 { get; set; }
+        IControlable ControlableUnit;
 
-        public Action ControlAction { get; private set; }
+        public Dictionary<Key, Action> GetActionByKey;
+        public Dictionary<string, Action> GetActionByDescription;
 
-        public String Desctiption { get; private set; }
 
-        public Control(Key key, Action action, string desription)
+        public Controls(IControlable unit)
         {
-            Controlkey = key;
-            ControlAction = action;
-            Desctiption = desription;
+            ControlableUnit = unit;
+            foreach (var item in ControlableUnit.GetType().GetProperties())
+            {
+                GetActionByKey.Add((Key)item.GetValue(ControlableUnit,null), (Action)Delegate.CreateDelegate(
+                    typeof(Action),
+                    ControlableUnit,
+                    ControlableUnit.GetType().GetMethod(item.Name))
+                   );
+                GetActionByDescription.Add(item.Name, (Action)Delegate.CreateDelegate(
+                    typeof(Action),
+                    ControlableUnit,
+                    ControlableUnit.GetType().GetMethod(item.Name))
+                    );
+            }
         }
     }
 }

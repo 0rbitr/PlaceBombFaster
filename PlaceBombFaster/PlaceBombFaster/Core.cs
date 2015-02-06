@@ -8,7 +8,6 @@ namespace PlaceBombFaster
     public class Core:IDisposable
     {
 
-        public List<GameObject> GameObjectsList { get; private set; }
 
         //public  MyProperty { get; set; }
 
