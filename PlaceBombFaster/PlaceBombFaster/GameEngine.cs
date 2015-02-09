@@ -10,7 +10,7 @@ namespace PlaceBombFaster
 
         public List<GameObject> GameObjectsList { get; private set; }
 
-
+        public int DrawIndex { get; set; }
 
        
         public void Draw(System.Windows.Controls.Canvas canvas)

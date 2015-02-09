@@ -46,7 +46,7 @@ namespace PlaceBombFaster
                     (Action)Delegate.CreateDelegate(
                     typeof(Action),
                     ControlableUnit,
-                    ControlableUnit.GetType().GetMethod(item.Name))
+                    ControlableUnit.GetType().GetMethod(item.Name+ "Method"))
                    );
             }
         }

@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace PlaceBombFaster
 {
-    abstract class GamePhysicalObject:GameObject
+    public abstract class GamePhysicalObject:GameObject
     {
         public int HP { get; set; }
         

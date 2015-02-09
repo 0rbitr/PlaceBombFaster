@@ -8,11 +8,16 @@ namespace PlaceBombFaster
 {
     abstract class DestroyingEffect:GameEffect,IUpdatable,IDrawable
     {
+        public int DrawIndex { get; set; }
+
+        public DestroyingEffect(GamePhysicalObject target):base(target)
+        {
+
+        }
+
+        public abstract void Update(TimeSpan timeSpan);
 
 
-        public void Update(TimeSpan timeSpan);
-
-
-        public void Draw(Canvas canvas);
+        public abstract void Draw(Canvas canvas);
     }
 }

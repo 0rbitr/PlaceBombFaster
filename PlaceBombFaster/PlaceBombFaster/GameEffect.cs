@@ -5,8 +5,9 @@ using System.Text;
 
 namespace PlaceBombFaster
 {
-    abstract class GameEffect:GameObject
+    public abstract class GameEffect:GameObject
     {
+        protected int _timeToEnd;
         protected GamePhysicalObject _targetObject;
 
         public GameEffect(GamePhysicalObject target)

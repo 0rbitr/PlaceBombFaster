@@ -3,6 +3,6 @@ namespace PlaceBombFaster
 {
     interface IUpdatable
     {
-        public void Update(TimeSpan timeSpan);
+         void Update(TimeSpan timeSpan);
     }
 }

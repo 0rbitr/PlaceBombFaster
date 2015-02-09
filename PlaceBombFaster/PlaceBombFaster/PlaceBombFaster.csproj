@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Stone.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +63,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bomber.cs" />
+    <Compile Include="BurningEffect.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="DestroyingEffect.cs" />

@@ -7,22 +7,25 @@ using System.Windows.Input;
 namespace PlaceBombFaster
 {
     
-    interface IControlable
+    public interface IControlable
     {
-        public Key GoUp { get; protected set; }
-        public Key GoDown { get; protected set; }
-        public Key GoLeft { get; protected set; }
-        public Key GoRight { get; protected set; }
-        public Key SpecialKey1 { get; protected set; }
-        public Key SpecialKey2 { get; protected set; }
+         Key GoUp { get;  set; }
+         Key GoDown { get;  set; }
+         Key GoLeft { get;  set; }
+         Key GoRight { get;  set; }
+         Key SpecialKey1 { get;  set; }
+         Key SpecialKey2 { get;  set; }
 
 
-        public void GoLeft();
-        public void GoRight();
-        public void GoDown();
-        public void GoUp();
-        public void SpecialKey1();
-        public void SpecialKey2();
+         Controls controls { get;  set; }
+
+
+         void GoLeftMethod();
+         void GoRightMethod();
+         void GoDownMethod();
+         void GoUpMethod();
+         void SpecialKey1Method();
+         void SpecialKey2Method();
 
     }
 }

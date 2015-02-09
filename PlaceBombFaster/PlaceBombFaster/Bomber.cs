@@ -11,13 +11,13 @@ namespace PlaceBombFaster
     [Serializable]
     public class Bomber : GamePhysicalObject, IUpdatable, IDrawable, IControlable
     {
-        
-        public static List<DrawingImage> AnimationTexture;
+        public int DrawIndex { get; set; }
 
-        Controls controls;
+        public static List<DrawingImage> AnimationTexture;
 
         public Bomber()
         {
+            
             controls = new Controls(this);
         }
 
@@ -36,111 +36,85 @@ namespace PlaceBombFaster
 
         public Key GoUp
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            protected set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public Key GoDown
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            protected set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public Key GoLeft
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            protected set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public Key GoRight
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            protected set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public Key SpecialKey1
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            protected set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public Key SpecialKey2
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            protected set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         #endregion
 
         #region KeysActions
 
-        void IControlable.GoLeft()
+
+
+        public void GoLeftMethod()
         {
             throw new NotImplementedException();
         }
 
-        void IControlable.GoRight()
+        public void GoRightMethod()
         {
             throw new NotImplementedException();
         }
 
-        void IControlable.GoDown()
+        public void GoDownMethod()
         {
             throw new NotImplementedException();
         }
 
-        void IControlable.GoUp()
+        public void GoUpMethod()
         {
             throw new NotImplementedException();
         }
 
-        void IControlable.SpecialKey1()
+        public void SpecialKey1Method()
         {
             throw new NotImplementedException();
         }
 
-        void IControlable.SpecialKey2()
+        public void SpecialKey2Method()
         {
             throw new NotImplementedException();
-        } 
+        }
+
         #endregion
 
-       
+
+        public Controls controls
+        {
+            get;
+            set;
+        }
+
+
     }
 }

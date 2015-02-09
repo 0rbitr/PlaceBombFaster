@@ -4,7 +4,7 @@ namespace PlaceBombFaster
 {
     interface IDrawable
     {
-
-        public void Draw(Canvas canvas);
+         int DrawIndex { get; set; }
+         void Draw(Canvas canvas);
     }
 }
