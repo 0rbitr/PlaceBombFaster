@@ -23,5 +23,11 @@ namespace PlaceBombFaster
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Canvas canv = new Canvas();
+            DrawingImage image = new DrawingImage();
+        }
     }
 }
